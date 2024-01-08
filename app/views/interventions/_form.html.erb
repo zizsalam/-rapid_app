@@ -1,0 +1,33 @@
+<%= form_with(model: @intervention, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+   <div class="form-group">
+    <%= form.label :service_type %>
+    <%= form.select :service_type, Intervention.service_type_options, {}, class: 'form-control' %>
+  </div>
+
+
+   <div class="form-group">
+    <%= form.label :appointment_datetime %>
+    <%= form.datetime_field :appointment_datetime, class: 'form-control' %>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :image_link %>
+    <%= form.text_field :image_link, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>
